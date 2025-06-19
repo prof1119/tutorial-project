@@ -58,3 +58,27 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
+ document.documentElement.setAttribute("translate", "no");
+
+    // منع أدوات الترجمة الآلية من تعديل النصوص
+    const observer = new MutationObserver(() => {
+        document.querySelectorAll('*').forEach(el => {
+            el.setAttribute('translate', 'no');
+        });
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+
+    // تعطيل خاصية الترجمة في واجهة Google Chrome
+    Object.defineProperty(document, 'googleTranslateElementInit', {
+        set: function () {
+            console.warn("منع تحميل Google Translate");
+        },
+        get: function () {
+            return function () {};
+        }
+    });

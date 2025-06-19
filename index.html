@@ -77,6 +77,39 @@
                     Facebook
                 </a>
 
+
+                <a href="#" class="social-link facebook" onclick="copyPubgID()"
+                    style="cursor: pointer; display: flex; align-items: center;">
+                    <span id="game-logo-container" style="margin-right: 8px;"></span>
+                    Click to copy PUBG ID
+                </a>
+
+                <script>
+                    const pubgID = "51541024974"; // ← ID اللعبة
+                    const gameLogoURL = "gear.png"; // ← URL اللوجو أو اتركه فاضي ""
+
+                    // إظهار اللوجو إن وُجد
+                    window.addEventListener("DOMContentLoaded", () => {
+                        const container = document.getElementById("game-logo-container");
+                        if (gameLogoURL) {
+                            const img = document.createElement("img");
+                            img.src = gameLogoURL;
+                            img.alt = "Game Logo";
+                            img.style.width = "14px";
+                            img.style.height = "14px";
+                            container.appendChild(img);
+                        }
+                    });
+
+                    // وظيفة النسخ
+                    function copyPubgID() {
+                        navigator.clipboard.writeText(pubgID).then(() => {
+                            alert("تم نسخ ID اللعبة بنجاح: " + pubgID);
+                        }).catch(err => {
+                            alert("حدث خطأ أثناء النسخ: " + err);
+                        });
+                    }
+                </script>
             </div>
 
             <div class="contact-section">
