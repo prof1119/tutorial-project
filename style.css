@@ -195,11 +195,6 @@ body {
         0 0 60px rgba(139, 92, 246, 0.2);
 }
 
-.profile-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;      /* يجعل الصورة تملأ الدائرة بدون تشويه */
-}
 
 .profile-image:hover {
     transform: scale(1.05) rotateY(10deg);
