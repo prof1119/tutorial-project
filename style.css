@@ -200,6 +200,7 @@ body {
   height: 100%;
   object-fit: cover;      /* يجعل الصورة تملأ الدائرة بدون تشويه */
 }
+
 .profile-image:hover {
     transform: scale(1.05) rotateY(10deg);
     box-shadow:
