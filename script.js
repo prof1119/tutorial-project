@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
         google.translate.TranslateElement = function () {};
     }
 
-    // إنشاء النجوم المتحركة
+
     function createStars() {
         const starsContainer = document.getElementById('stars');
         if (!starsContainer) return;
@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // استدعاء النجوم بعد التحميل
+    
     createStars();
 
-    // إعادة رسم النجوم عند تغيير حجم الشاشة
+
     window.addEventListener('resize', () => {
         const starsContainer = document.getElementById('stars');
         if (starsContainer) {
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // تأثير ثلاثي الأبعاد على البطاقة - لأجهزة الديسكتوب فقط
+ 
     if (window.innerWidth > 768) {
         const card = document.querySelector('.profile-card');
         if (card) {
