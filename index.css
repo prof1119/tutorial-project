@@ -746,9 +746,6 @@ button, .platform-card {
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(45deg, #5a6fd8, #6a4190);
 }
-
-
-
 .overlay-message {
     position: fixed;
     top: 0; right: 0; bottom: 0; left: 0;
