@@ -353,3 +353,32 @@ if (typeof module !== 'undefined' && module.exports) {
     };
 }
 
+
+ // تحسين التمرير + تقليل التقطيع
+  window.addEventListener('load', () => {
+    // إجبار المتصفح يستخدم GPU على العناصر
+    document.querySelectorAll('*').forEach(el => {
+      el.style.willChange = 'transform, opacity';
+    });
+
+    // Scroll smoother (بدون التأثير على الأداء)
+    document.documentElement.style.scrollBehavior = 'smooth';
+
+    // تعطيل الأنيميشن وقت السكروول بسرعة (تجريبي)
+    let isScrolling;
+    window.addEventListener('scroll', () => {
+      document.body.classList.add('scrolling');
+      clearTimeout(isScrolling);
+      isScrolling = setTimeout(() => {
+        document.body.classList.remove('scrolling');
+      }, 200);
+    });
+  });
+</script>
+
+<style>
+  /* لو عندك أنيميشن كتير، نوقفها مؤقتًا وقت السكروول */
+  body.scrolling * {
+    transition: none !important;
+    animation: none !important;
+  }
