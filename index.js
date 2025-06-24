@@ -353,20 +353,3 @@ if (typeof module !== 'undefined' && module.exports) {
     };
 }
 
-
- // منع Google Translate تلقائيًا
-    document.documentElement.classList.add('notranslate');
-
-    // منع بعض الإضافات من حقن عناصر الترجمة
-    const observer = new MutationObserver(() => {
-        const translateElements = document.querySelectorAll('[id^="google_translate"]');
-        translateElements.forEach(el => el.remove());
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    // محاولة إبطال أي محاولة تغيير اللغة
-    Object.defineProperty(navigator, 'language', { get: () => 'ar' });
-    Object.defineProperty(navigator, 'languages', { get: () => ['ar'] });
-
-
