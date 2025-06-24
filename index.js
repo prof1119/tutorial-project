@@ -352,3 +352,24 @@ if (typeof module !== 'undefined' && module.exports) {
         PLATFORM_URLS
     };
 }
+
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'ar',
+    includedLanguages: 'en,fr,de,it,es,ru,tr,zh-CN',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+
+  const userLang = navigator.language || navigator.userLanguage;
+  const langCode = userLang.split('-')[0];
+
+  setTimeout(() => {
+    const select = document.querySelector("select.goog-te-combo");
+    if (select) {
+      select.value = langCode;
+      select.dispatchEvent(new Event("change"));
+    }
+  }, 1000);
+}
