@@ -264,6 +264,38 @@
                 </footer>
             </div>
 
+            <div id="google_translate_element" style="display: none;"></div>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'ar',
+      includedLanguages: 'en,fr,de,ar',
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+
+  // ترجم تلقائياً للإنجليزية عند تحميل الصفحة
+  function autoTranslate(lang) {
+    var interval = setInterval(function () {
+      if (document.querySelector('.goog-te-combo')) {
+        document.querySelector('.goog-te-combo').value = lang;
+        document.querySelector('.goog-te-combo').dispatchEvent(new Event('change'));
+        clearInterval(interval);
+      }
+    }, 500);
+  }
+
+  window.addEventListener('load', function () {
+    autoTranslate('en'); // بدل 'en' لأي لغة تانية زي 'fr' للفرنساوي أو 'de' للألماني
+  });
+</script>
+
+<script type="text/javascript"
+  src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
+
             <script src="index.js"></script>
         </body>
 
