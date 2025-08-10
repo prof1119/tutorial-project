@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="circular_professional_design.svg" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostafa Kamal</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <!-- Palestine Message Overlay -->
+    <div class="palestine-overlay" id="palestineOverlay">
+        <div class="palestine-message">
+            <div class="palestine-image">
+                <img src="https://flagcdn.com/w320/ps.png" alt="Palestine">
+            </div>
+            <div class="palestine-prayer">
+                صلّ على النبي ﷺ<br>
+                اللهم انصر إخواننا في فلسطين<br>
+                
+            </div>
+            <button class="enter-btn" onclick="enterWebsite()">
+                <span>Enter Website</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Space Background -->
+    <div class="space-bg">
+        <div class="stars" id="stars"></div>
+        <div class="floating-rocks" id="rocks"></div>
+    </div>
+
+    <!-- PUBG ID Button -->
+    <button class="pubg-id-btn" onclick="copyPubgId()">
+        PUBG ID
+    </button>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">PUBG ID Copied!✅</div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Profile Section -->
+        <section class="profile-section">
+            <div class="profile-image">
+                <img src="mustfa.jpg" alt="Profile Picture">
+            </div>
+            <h1 class="name">Mostafa Kamal Emaira</h1>
+            <p class="title">YouTube content creator</p>
+        </section>
+
+        <!-- Bio Section -->
+        <section class="bio-section section-animate">
+            <h2 class="section-title">Mustafa Kamal Emaira</h2>
+            <p>Mustafa Kamal Emaira is a YouTube content creato
+
+                Hey everyone! I'm Mostafa Kamal Emaira, a digital content creator on YouTube. I create reaction videos
+                to all kinds of trending and entertaining content from across the internet — from funny clips to viral
+                moments. My goal is to keep you entertained, make you laugh, and bring a little joy to your day</p>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section section-animate">
+            <div class="about-content">
+                <h2 class="section-title">About Me</h2>
+                <p>Mission
+                    Create 100% halal content and reach one million followers.
+                    Inspire positive change through meaningful and ethical media.
+                    Build a community rooted in values, creativity, and impact.</p>
+                <br>
+                <p>Experience
+                    Experience since 2017 on various social media sites.
+                    Specialized in content creation, audience growth, and trend adaptation.
+                    Built and managed pages with consistent engagement and meaningful impact.
+
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="mustfa1.jpg"
+                    alt="Content Creation Setup">
+            </div>
+        </section>
+
+        <!-- Social Platforms -->
+        <section class="platforms-section section-animate">
+            <h2 class="section-title">My Platforms</h2>
+            <div class="platforms-grid">
+                <div class="platform-card youtube-card" onclick="openPlatform('youtube')">
+                    <div class="platform-icon youtube-icon">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube"
+                            style="filter: invert(1);">
+                    </div>
+                    <div class="follower-count">7.58K+</div>
+                    <div class="platform-quote">"Comedy and funny clips designer"</div>
+                </div>
+
+                <div class="platform-card instagram-card" onclick="openPlatform('instagram')">
+                    <div class="platform-icon instagram-icon">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram"
+                            style="filter: invert(1);">
+                    </div>
+                    <div class="follower-count">600+</div>
+                    <div class="platform-quote">"Daily stories and interaction with followers"</div>
+                </div>
+
+                <div class="platform-card tiktok-card" onclick="openPlatform('tiktok')">
+                    <div class="platform-icon tiktok-icon">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" alt="TikTok"
+                            style="filter: invert(1);">
+                    </div>
+                    <div class="follower-count">11.5K+</div>
+                    <div class="platform-quote">"short video"</div>
+                </div>
+
+                <div class="platform-card facebook-card" onclick="openPlatform('facebook')">
+                    <div class="platform-icon facebook-icon">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook"
+                            style="filter: invert(1);">
+                    </div>
+                    <div class="follower-count">4.3K+</div>
+                    <div class="platform-quote">"Daily stories and interaction with followers"</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+
+</html>

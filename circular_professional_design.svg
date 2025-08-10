@@ -1,0 +1,110 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- التدرج الخلفي الرئيسي -->
+    <radialGradient id="mainGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- تدرج ذهبي للحلقات -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ffb347;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8c42;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- تدرج للعناصر الداخلية -->
+    <radialGradient id="innerGradient" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+      <stop offset="70%" style="stop-color:#e0c3fc;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#9bb5ff;stop-opacity:0.3" />
+    </radialGradient>
+    
+    <!-- فلتر للظلال -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,0.3)"/>
+    </filter>
+    
+    <!-- فلتر للتوهج -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- الخلفية الدائرية الرئيسية -->
+  <circle cx="200" cy="200" r="190" fill="url(#mainGradient)" filter="url(#shadow)"/>
+  
+  <!-- الحلقة الخارجية الذهبية -->
+  <circle cx="200" cy="200" r="175" fill="none" stroke="url(#goldGradient)" stroke-width="4" opacity="0.8"/>
+  
+  <!-- الحلقة الوسطى -->
+  <circle cx="200" cy="200" r="155" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+  
+  <!-- الدائرة الداخلية -->
+  <circle cx="200" cy="200" r="130" fill="url(#innerGradient)" opacity="0.7"/>
+  
+  <!-- العناصر الهندسية المتحركة -->
+  <g transform="translate(200,200)">
+    <!-- المثلثات الدوارة -->
+    <g opacity="0.6" filter="url(#glow)">
+      <polygon points="0,-60 52,-20 -52,-20" fill="rgba(255,255,255,0.8)">
+        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="20s" repeatCount="indefinite"/>
+      </polygon>
+      <polygon points="0,60 52,20 -52,20" fill="rgba(255,255,255,0.6)">
+        <animateTransform attributeName="transform" type="rotate" values="360;0" dur="25s" repeatCount="indefinite"/>
+      </polygon>
+    </g>
+    
+    <!-- الدوائر الصغيرة المتحركة -->
+    <circle cx="80" cy="0" r="8" fill="url(#goldGradient)" opacity="0.8">
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="15s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="-80" cy="0" r="6" fill="rgba(255,255,255,0.9)" opacity="0.7">
+      <animateTransform attributeName="transform" type="rotate" values="360;0" dur="18s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="80" r="5" fill="rgba(255,183,71,0.8)" opacity="0.9">
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="-80" r="7" fill="rgba(255,255,255,0.8)" opacity="0.6">
+      <animateTransform attributeName="transform" type="rotate" values="360;0" dur="22s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- النجمة المركزية -->
+  <g transform="translate(200,200)" opacity="0.9" filter="url(#glow)">
+    <polygon points="0,-25 7,-8 25,-8 12,2 18,20 0,10 -18,20 -12,2 -25,-8 -7,-8" 
+             fill="url(#goldGradient)" stroke="rgba(255,255,255,0.5)" stroke-width="1">
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="30s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+  
+  <!-- الأشعة الخارجية -->
+  <g transform="translate(200,200)" opacity="0.4">
+    <line x1="0" y1="-180" x2="0" y2="-160" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+    <line x1="127" y1="-127" x2="113" y2="-113" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+    <line x1="180" y1="0" x2="160" y2="0" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+    <line x1="127" y1="127" x2="113" y2="113" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+    <line x1="0" y1="180" x2="0" y2="160" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+    <line x1="-127" y1="127" x2="-113" y2="113" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+    <line x1="-180" y1="0" x2="-160" y2="0" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+    <line x1="-127" y1="-127" x2="-113" y2="-113" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+    
+    <animateTransform attributeName="transform" type="rotate" values="0;360" dur="40s" repeatCount="indefinite"/>
+  </g>
+  
+  <!-- التأثيرات اللامعة -->
+  <circle cx="150" cy="120" r="3" fill="rgba(255,255,255,0.9)" opacity="0.8">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="280" cy="200" r="2" fill="rgba(255,255,255,0.9)" opacity="0.6">
+    <animate attributeName="opacity" values="0.2;0.9;0.2" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="200" cy="300" r="4" fill="rgba(255,255,255,0.8)" opacity="0.7">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>
